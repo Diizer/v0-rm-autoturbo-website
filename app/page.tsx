@@ -15,18 +15,18 @@ import { Footer } from '@/components/footer'
 import type { Locale } from '@/lib/translations'
 
 function getDefaultLocale(): Locale {
-  if (typeof window === 'undefined') return 'en'
+  if (typeof window === 'undefined') return 'es'
   
   const browserLang = navigator.language.toLowerCase()
   
   if (browserLang.startsWith('ca')) return 'ca'
-  if (browserLang.startsWith('es')) return 'es'
+  if (browserLang.startsWith('en')) return 'en'
   if (browserLang.startsWith('fr')) return 'fr'
-  return 'en'
+  return 'es'
 }
 
 export default function Home() {
-  const [locale, setLocale] = useState<Locale>('en')
+  const [locale, setLocale] = useState<Locale>('es')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
